@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <section class="logo"></section>
+        <section class="navbar">
+            <button>Home</button>
+            <button>Our Pages</button>
+            <button>Call me</button>
+        </section>
+    </header>
+
+    <section class="container">
+        <header>
+            <h1>Your Trusted Travel Agents</h1>
+            <p>Your Happines is Our Happines</p>
+        </header>
+
+
+        <div class="content-container">
+            <div class="box-left" style="right: 50px; height: 400px; width: 50%; background-color: aliceblue; border-radius: 15px;">
+                <div class="imageSlide">
+                    <img class="img-slide" src="img1.jpg" alt="travel">
+                </div>
+                <div class="imageSlide">
+                    <img class="img-slide" src="img2.jpg" alt="travel">
+                </div>
+                <div class="imageSlide">
+                    <img class="img-slide" src="img3.jpg" alt="travel">
+                </div>
+                
+                <button class="previous" onclick="plusDivs(-1)">Previous</button>
+                <button class="next" onclick="plusDivs(1)">Next</button>
+                </div>
+
+                
+
+                <div class="box-left" style="right: 50px; height: 400px; width: 50%; background-color: aliceblue; border-radius: 15px;">
+                    <h2>Contact</h2>
+                    <p>Sales akan menghubungi anda dalam 1x24 jam</p>
+            
+                    <form class="contact-us" name="contact-form">
+                        <label>Your Name</label><br>
+                        <input class="form-item" type="text" name="user-name" id="name"> <br>
+                        <label>Email</label><br>
+                        <input class="form-item" type="text" name="email" id="name"><br>
+                        <label for="interest">What are you interested in?</label><br>
+                        <select class="pilih" name="interest" id="interest">
+                            <option value="html">HTML</option>
+                            <option value="html">JavaScript</option>
+                            <option value="html">CSS</option>
+                        </select><br><br>
+                        <button class="send" type="submit" id="send-button">Send</button>
+                    </form>
+                    </div>
+            </div>
+        </div>
+        
+
+
+
+</section>
+
+<section class="package">
+    <header>
+        <h1>Our Package</h1>
+    </header>
+
+
+</section>
+
+<script>
+    var slideIndex = -1;
+    showDivs(slideIndex);
+    function plusDivs(n) {
+        showDivs((slideIndex += n));
+    }
+
+    function showDivs(n) {
+        var i;
+        var imgList = document.getElementsByClassName('img-slide');
+        if (n > imgList.length) slideIndex = 1;
+
+        else if (n < 1 ) slideIndex = imgList.length;
+
+        for (i = 0; i < imgList.length; i++) {
+            imgList[i].style.display = "none";
+
+        }
+
+       imgList[slideIndex - 1].style.display = "block";
+
+       
+    }
+</script>
+
+    
+</body>
+</html>
